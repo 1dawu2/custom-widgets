@@ -4,7 +4,7 @@
     "name": "BoxHTG",
     "description": "A colored box",
     "newInstancePrefix": "ColoredBox",
-    "icon": "https://github.com/1dawu2/custom-widgets/blob/fae03881eaa72d14754572e2d8817395bcbbaf68/icon.png",
+    "icon": "https://1dawu2.github.io/custom-widgets/icon.png",
     "vendor": "IFM",
     "eula": "",
     "license": "",
@@ -12,21 +12,21 @@
         {
             "kind": "main",
             "tag": "com-box-htg",
-            "url": "https://github.com/1dawu2/custom-widgets/blob/fae03881eaa72d14754572e2d8817395bcbbaf68/box.js",
+            "url": "https://1dawu2.github.io/custom-widgets/box.js",
             "integrity": "",
             "ignoreIntegrity": true
         },
         {
             "kind": "styling",
             "tag": "com-box-htg-styling",
-            "url": "https://github.com/1dawu2/custom-widgets/blob/fae03881eaa72d14754572e2d8817395bcbbaf68/box_styling.js",
+            "url": "https://1dawu2.github.io/custom-widgets/box_styling.js",
             "integrity": "",
             "ignoreIntegrity": true
         },
         {
             "kind": "builder",
             "tag": "com-box-htg-builder",
-            "url": "https://github.com/1dawu2/custom-widgets/blob/fae03881eaa72d14754572e2d8817395bcbbaf68/box_builder.js",
+            "url": "https://1dawu2.github.io/custom-widgets/box_builder.js",
             "integrity": "",
             "ignoreIntegrity": true
         }
