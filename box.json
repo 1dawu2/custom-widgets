@@ -1,11 +1,11 @@
 {
-    "id": "com-box-htg",
+    "id": "com.box.htg",
     "version": "1.0.0",
-    "name": "Box HTG",
+    "name": "BoxHTG",
     "description": "A colored box",
     "newInstancePrefix": "ColoredBox",
     "icon": "https://github.com/1dawu2/custom-widgets.git/icon.png",
-    "vendor": "SAP",
+    "vendor": "IFM",
     "eula": "",
     "license": "",
     "webcomponents": [
