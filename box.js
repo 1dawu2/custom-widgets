@@ -34,5 +34,5 @@
             }
         }
     }
-    customElements.define("com-sap-sample-coloredbox", ColoredBox);
+    customElements.define("com-box-htg-main", ColoredBox);
 })();
