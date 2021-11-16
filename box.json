@@ -11,7 +11,7 @@
     "webcomponents": [
         {
             "kind": "main",
-            "tag": "com-box-htg",
+            "tag": "com-box-htg-main",
             "url": "https://1dawu2.github.io/custom-widgets/box.js",
             "integrity": "",
             "ignoreIntegrity": true
