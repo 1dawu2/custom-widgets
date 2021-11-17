@@ -14,6 +14,7 @@
     class ColoredBox extends HTMLElement {
         constructor() {
             super();
+            var _dataSource;
             let shadowRoot = this.attachShadow({ mode: "open" });
             shadowRoot.appendChild(template.content.cloneNode(true));
             this.addEventListener("click", event => {
@@ -22,8 +23,8 @@
             });
             this._props = {};
         }
-		async setSource(source) {
-			this._dataSource = source;			
+		async setSource(newsource) {
+			this._dataSource = newsource;			
 
 			let resultSet = await source.getResultSet();
             console.log(resultSet);
