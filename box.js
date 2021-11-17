@@ -30,6 +30,7 @@
             let value = result ? parseFloat(result["@MeasureDimension"].rawValue) : null;
             console.log(value);	
             console.log("Hallo World");
+            alert("Hello! I am an alert box!!");
 			
 		}        
         onCustomWidgetBeforeUpdate(changedProperties) {
