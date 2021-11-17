@@ -61,7 +61,7 @@
                     "description": "Set Data Source based on table"
                 }
             ],
-            "body": "newsource.getResultSet();"
+            "body": "newsource;"
         }, 
         "getColor": {
             "returnType": "string",
