@@ -56,18 +56,13 @@
             "default": 250
         }
     },
-    "methods": {
-        "getSource": {
-            "returnType": "string",
-            "description": "Returns the Data Source.",
-            "body": "return this.source;"
-        },         
+    "methods": {       
         "setSource": {
             "description": "Set Data Source based on table",
             "parameters": [
                 {                    
                     "name": "newsource",
-                    "type": "string",
+                    "type": "Table",
                     "description": "Set Data Source based on table"
                 }
             ],
@@ -95,5 +90,6 @@
         "onClick": {
             "description": "Called when the user clicks the Colored Box."
         }
-    }
+    },
+    "imports": ["table", "input-controls"]
 }
