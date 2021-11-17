@@ -32,6 +32,10 @@
         }
     ],
     "properties": {
+        "source": {
+            "type": "DataSource",
+            "description": "Data Source"         
+        },
         "color": {
             "type": "string",
             "description": "Background color",
@@ -61,7 +65,7 @@
                     "description": "Set Data Source based on table"
                 }
             ],
-            "body": "newsource;"
+            "body": "this.source = newsource;"
         }, 
         "getColor": {
             "returnType": "string",
