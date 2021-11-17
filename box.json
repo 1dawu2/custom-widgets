@@ -32,6 +32,11 @@
         }
     ],
     "properties": {
+        "source": {
+            "tType": "string",
+            "description": "Returns the Data Source.",
+            "default": "Table_1;"            
+        },
         "color": {
             "type": "string",
             "description": "Background color",
@@ -52,6 +57,11 @@
         }
     },
     "methods": {
+        "getSource": {
+            "returnType": "string",
+            "description": "Returns the Data Source.",
+            "body": "return this.source;"
+        },         
         "setSource": {
             "description": "Set Data Source based on table",
             "parameters": [
@@ -62,7 +72,12 @@
                 }
             ],
             "body": "this.source = newsource;"
-        },
+        }, 
+        "getColor": {
+            "returnType": "string",
+            "description": "Returns the background color.",
+            "body": "return this.color;"
+        },              
         "setColor": {
             "description": "Sets the background color.",
             "parameters": [
@@ -73,17 +88,8 @@
                 }
             ],
             "body": "this.color = newColor;"
-        },
-        "getSource": {
-            "returnType": "string",
-            "description": "Returns the Data Source.",
-            "body": "return this.source;"
-        },
-        "getColor": {
-            "returnType": "string",
-            "description": "Returns the background color.",
-            "body": "return this.color;"
         }
+
     },
     "events": {
         "onClick": {
