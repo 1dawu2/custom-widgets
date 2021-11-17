@@ -32,6 +32,11 @@
         }
     ],
     "properties": {
+        "tableName": {
+            "type": "string",
+            "description": "Tablename",
+            "default": "Table_1"
+        },
         "source": {
             "type": "DataSource",
             "description": "Data Source"         
@@ -55,7 +60,23 @@
             "default": 250
         }
     },
-    "methods": {       
+    "methods": {
+        "setTablename": {
+            "description": "Sets the table name.",
+            "parameters": [
+                {
+                    "name": "newTableName",
+                    "type": "string",
+                    "description": "The new table name"
+                }
+            ],
+            "body": "this.tableName = newTableName;"
+        },
+        "getTablename": {
+            "returnType": "string",
+            "description": "Returns the name of the table.",
+            "body": "return this.tableName;"
+        },
         "setSource": {
             "description": "Set Data Source based on table",
             "parameters": [

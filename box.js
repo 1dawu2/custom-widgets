@@ -15,6 +15,7 @@
         constructor() {
             super();
             var _dataSource;
+            var _tableName;
             let shadowRoot = this.attachShadow({ mode: "open" });
             shadowRoot.appendChild(template.content.cloneNode(true));
             this.addEventListener("click", event => {
@@ -23,6 +24,16 @@
             });
             this._props = {};
         }
+
+        get tableName() {
+            return this._tableName;
+        }
+        set tableName(tableName) {
+        	console.log("setTitle:" + tableName);
+            this._tableName = tableName;
+        }
+
+
 		async setSource(newsource) {
 			this._dataSource = newsource;			
 
