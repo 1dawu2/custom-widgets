@@ -33,7 +33,7 @@
     ],
     "properties": {
         "source": {
-            "tType": "string",
+            "type": "string",
             "description": "Returns the Data Source.",
             "default": "Table_1;"            
         },
