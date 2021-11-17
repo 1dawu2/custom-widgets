@@ -57,11 +57,11 @@
             "parameters": [
                 {                    
                     "name": "newsource",
-                    "type": "Table",
+                    "type": "DataSource",
                     "description": "Set Data Source based on table"
                 }
             ],
-            "body": "newsource.getDataSource();"
+            "body": "newsource.getResultSet();"
         }, 
         "getColor": {
             "returnType": "string",
@@ -86,5 +86,5 @@
             "description": "Called when the user clicks the Colored Box."
         }
     },
-    "imports": ["table", "input-controls"]
+    "imports": ["table", "datasource"]
 }
