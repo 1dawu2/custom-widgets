@@ -35,7 +35,7 @@
         "color": {
             "type": "string",
             "description": "Background color",
-            "default": "red"
+            "default": "black"
         },
         "opacity": {
             "type": "number",
@@ -44,14 +44,25 @@
         },
         "width": {
             "type": "integer",
-            "default": 100
+            "default": 250
         },
         "height": {
             "type": "integer",
-            "default": 100
+            "default": 250
         }
     },
     "methods": {
+        "setSource": {
+            "description": "Set Data Source based on table",
+            "parameters": [
+                {
+                    "source": "newsource",
+                    "type": "string",
+                    "description": "Set Data Source based on table"
+                }
+            ],
+            "body": "this.source = newsource;"
+        },
         "setColor": {
             "description": "Sets the background color.",
             "parameters": [
@@ -62,6 +73,11 @@
                 }
             ],
             "body": "this.color = newColor;"
+        },
+        "getSource": {
+            "returnType": "string",
+            "description": "Returns the Data Source.",
+            "body": "return this.source;"
         },
         "getColor": {
             "returnType": "string",

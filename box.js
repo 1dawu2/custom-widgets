@@ -22,6 +22,15 @@
             });
             this._props = {};
         }
+		async setSource(source) {
+			this._dataSource = source;			
+
+			let resultSet = await source.getResultSet();
+            console.log(resultSet);
+            let value = result ? parseFloat(result["@MeasureDimension"].rawValue) : null;
+            console.log(value);	
+			
+		}        
         onCustomWidgetBeforeUpdate(changedProperties) {
             this._props = { ...this._props, ...changedProperties };
         }
