@@ -55,8 +55,8 @@
         "setSource": {
             "description": "Set Data Source based on table",
             "parameters": [
-                {
-                    "source": "newsource",
+                {                    
+                    "name": "newsource",
                     "type": "string",
                     "description": "Set Data Source based on table"
                 }
