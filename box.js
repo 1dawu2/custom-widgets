@@ -34,8 +34,9 @@
         }
 
 
-		async setSource(newsource) {
-			this._dataSource = newsource;			
+
+		async retrieveSource(source) {
+			this._dataSource = source;			
 
 			let resultSet = await source.getResultSet();
             console.log(resultSet);
