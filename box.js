@@ -43,8 +43,8 @@
 
         handleClick() {
             this._button.setText("Hello!"); // (4) WILL NOT WORK!
-            this._dataSource;
-            console.log(this._dataSource);
+            //this._dataSource;
+            //console.log(this._dataSource);
         }
 
 
