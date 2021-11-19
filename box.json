@@ -39,7 +39,7 @@
         },
         "source": {
             "type": "DataSource",
-            "description": "Data Source"         
+            "description": "Data Source"
         },
         "color": {
             "type": "string",
@@ -61,6 +61,19 @@
         }
     },
     "methods": {
+        "setButtonText1": {
+            "parameters": [
+                {
+                    "name": "button",
+                    "type": "Button"
+                },
+                {
+                    "name": "text",
+                    "type": "string"
+                }
+            ],
+            "body": "button.setText(text);"
+        },
         "setTablename": {
             "description": "Sets the table name.",
             "parameters": [
@@ -80,19 +93,19 @@
         "retrieveSource": {
             "description": "Set Data Source based on table",
             "parameters": [
-                {                    
+                {
                     "name": "newsource",
                     "type": "DataSource",
                     "description": "Set Data Source based on table"
                 }
             ],
             "body": "this.source = newsource;"
-        }, 
+        },
         "getColor": {
             "returnType": "string",
             "description": "Returns the background color.",
             "body": "return this.color;"
-        },              
+        },
         "setColor": {
             "description": "Sets the background color.",
             "parameters": [
@@ -104,12 +117,15 @@
             ],
             "body": "this.color = newColor;"
         }
-
     },
     "events": {
-        "onClick": {
-            "description": "Called when the user clicks the Colored Box."
+        "onStart": {
+            "description": "onStart events trigger"
         }
     },
-    "imports": ["table", "datasource"]
+    "imports": [
+        "table",
+        "datasource",
+        "button"
+    ]
 }
