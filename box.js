@@ -14,7 +14,6 @@
     class ColoredBox extends HTMLElement {
         constructor() {
             super();
-            var _dataSource;
             var _tableName;
             let shadowRoot = this.attachShadow({ mode: "open" });
             shadowRoot.appendChild(template.content.cloneNode(true));
@@ -48,15 +47,16 @@
         }
 
 
-        async retrieveSource(newsource) {
-            this._dataSource = newsource;
-            console.log(newsource);
-            let resultSet = await newsource.getResultSet();
-            console.log(resultSet);
-            let value = result ? parseFloat(result["@MeasureDimension"].rawValue) : null;
-            console.log(value);
-            console.log("Hallo World");
-            alert("Hello! I am an alert box!!");
+        _dataSource = undefined;
+        async retrieveSource(source) {
+            this._dataSource = source;
+            console.log(this._dataSource);
+           // let resultSet = await newsource.getResultSet();
+            //console.log(resultSet);
+            //let value = result ? parseFloat(result["@MeasureDimension"].rawValue) : null;
+            //console.log(value);
+            //console.log("Hallo World");
+            //alert("Hello! I am an alert box!!");
 
         }
         onCustomWidgetBeforeUpdate(changedProperties) {

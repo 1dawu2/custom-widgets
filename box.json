@@ -37,10 +37,6 @@
             "description": "Tablename",
             "default": "Table_1"
         },
-        "source": {
-            "type": "DataSource",
-            "description": "Data Source"
-        },
         "color": {
             "type": "string",
             "description": "Background color",
@@ -94,12 +90,12 @@
             "description": "Set Data Source based on table",
             "parameters": [
                 {
-                    "name": "newsource",
+                    "name": "source",
                     "type": "DataSource",
                     "description": "Set Data Source based on table"
                 }
             ],
-            "body": "this.source = newsource;"
+            "body": "source.getResultSet();"
         },
         "getColor": {
             "returnType": "string",
