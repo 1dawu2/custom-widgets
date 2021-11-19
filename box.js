@@ -24,6 +24,14 @@
             this._props = {};
         }
 
+        get tableName() {
+            return this._tableName;
+        }
+        set tableName(tableName) {
+            console.log("setTitle:" + tableName);
+            this._tableName = tableName;
+        }
+
         _button = undefined;
         setButtonText2(button, text) {
             button.setText(text); // (2) OK
@@ -35,22 +43,18 @@
 
         handleClick() {
             this._button.setText("Hello!"); // (4) WILL NOT WORK!
-        }
-
-
-        get tableName() {
-            return this._tableName;
-        }
-        set tableName(tableName) {
-            console.log("setTitle:" + tableName);
-            this._tableName = tableName;
+            this._dataSource;
+            console.log(this._dataSource);
         }
 
 
         _dataSource = undefined;
         retrieveSource(source) {
-            this._dataSource = source;
+            _dataSource = source;
             console.log(this._dataSource);
+            setTimeout(() => {
+                this.dataSource; // (3) WILL NOT WORK!
+            });
            // let resultSet = await newsource.getResultSet();
             //console.log(resultSet);
             //let value = result ? parseFloat(result["@MeasureDimension"].rawValue) : null;
