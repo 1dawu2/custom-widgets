@@ -33,7 +33,7 @@
         }
 
         _button = undefined;
-        setButtonText2(button, text) {
+        setButtonText1(button, text) {
             button.setText(text); // (2) OK
             _button = button;
             setTimeout(() => {
