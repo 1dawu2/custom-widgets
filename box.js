@@ -55,7 +55,7 @@
             setTimeout(() => {
                 this._dataSource; // (3) WILL NOT WORK!
             });
-           // let resultSet = await newsource.getResultSet();
+            // let resultSet = await newsource.getResultSet();
             //console.log(resultSet);
             //let value = result ? parseFloat(result["@MeasureDimension"].rawValue) : null;
             //console.log(value);
@@ -63,6 +63,22 @@
             //alert("Hello! I am an alert box!!");
 
         }
+
+        async render (resultSet) {
+
+            const MEASURE_DIMENSION = '@MeasureDimension'
+            const account = []
+            const date = []
+            const series = []
+            console.log(resultSet);
+            resultSet.forEach(dp => {
+                const { rawValue, description } = dp[MEASURE_DIMENSION]
+                const account = dp.Account.description
+                const date = Number(dp.Date.description)
+
+              })
+        }
+
         onCustomWidgetBeforeUpdate(changedProperties) {
             this._props = { ...this._props, ...changedProperties };
         }

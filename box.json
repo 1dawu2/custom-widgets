@@ -97,6 +97,16 @@
             ],
             "body": "source.getResultSet();"
         },
+        "render": {
+            "description": "Render",
+            "parameters": [
+                {
+                    "name": "resultSet",
+                    "type": "any",
+                    "description": "The json"
+                }
+            ]
+        },
         "getColor": {
             "returnType": "string",
             "description": "Returns the background color.",
@@ -114,11 +124,7 @@
             "body": "this.color = newColor;"
         }
     },
-    "events": {
-        "onStart": {
-            "description": "onStart events trigger"
-        }
-    },
+    "events": {},
     "imports": [
         "table",
         "datasource",
