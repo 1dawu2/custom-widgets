@@ -37,7 +37,7 @@
 
 		async retrieveSource(source) {
 			this._dataSource = source;			
-
+            console.log(source);
 			let resultSet = await source.getResultSet();
             console.log(resultSet);
             let value = result ? parseFloat(result["@MeasureDimension"].rawValue) : null;
