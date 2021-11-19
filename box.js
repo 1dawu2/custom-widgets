@@ -53,7 +53,7 @@
             _dataSource = source;
             console.log(this._dataSource);
             setTimeout(() => {
-                this.dataSource; // (3) WILL NOT WORK!
+                this._dataSource; // (3) WILL NOT WORK!
             });
            // let resultSet = await newsource.getResultSet();
             //console.log(resultSet);
