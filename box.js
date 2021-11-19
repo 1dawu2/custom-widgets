@@ -48,7 +48,7 @@
 
 
         _dataSource = undefined;
-        async retrieveSource(source) {
+        retrieveSource(source) {
             this._dataSource = source;
             console.log(this._dataSource);
            // let resultSet = await newsource.getResultSet();
