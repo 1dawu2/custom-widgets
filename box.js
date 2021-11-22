@@ -105,9 +105,9 @@ var getScriptPromisify = (src) => {
                 if (description === 'Volume') {
                     iV = 0
                 }
-                series[iT][iC][iV] = rawValue
-                series[iT][iC][1] = product
-                series[iT][iC][2] = date
+                series[iT][iP][iV] = rawValue
+                series[iT][iP][1] = product
+                series[iT][iP][2] = date
 
                 console.log(series);
 
