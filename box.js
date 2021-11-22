@@ -29,13 +29,11 @@ var getScriptPromisify = (src) => {
             var _tableName;
 
             this._shadowRoot = this.attachShadow({ mode: 'open' })
-            this._shadowRoot.appendChild(prepared.content.cloneNode(true))
-
+            this._shadowRoot.appendChild(template.content.cloneNode(true))
+      
             this._root = this._shadowRoot.getElementById('root')
-
+      
             this._props = {}
-
-            this.render()
         }
 
         get tableName() {
