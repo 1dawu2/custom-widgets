@@ -49,11 +49,11 @@
         },
         "width": {
             "type": "integer",
-            "default": 250
+            "default": 600
         },
         "height": {
             "type": "integer",
-            "default": 250
+            "default": 400
         }
     },
     "methods": {
@@ -86,17 +86,6 @@
             "description": "Returns the name of the table.",
             "body": "return this.tableName;"
         },
-        "retrieveSource": {
-            "description": "Set Data Source based on table",
-            "parameters": [
-                {
-                    "name": "source",
-                    "type": "DataSource",
-                    "description": "Set Data Source based on table"
-                }
-            ],
-            "body": "source.getResultSet();"
-        },
         "render": {
             "description": "Render",
             "parameters": [
@@ -127,7 +116,6 @@
     "events": {},
     "imports": [
         "table",
-        "datasource",
         "button"
     ]
 }
