@@ -74,7 +74,7 @@ var getScriptPromisify = (src) => {
             var myChart = this._myChart = echarts.init(this._root, 'dark')
 
 
-            const MEASURE_DIMENSION = '@MeasureDimension'
+            const MEASURE_DIMENSION = 'Account'
             const dates = []
             const products = []
             const series = []
@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
                 series[iT][iP] = series[iT][iP] || []
 
                 let iV
-                if (description === 'Value') {
+                if (description === 'Volume') {
                     iV = 0
                 }
                 series[iT][iP][iV] = rawValue
