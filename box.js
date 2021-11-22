@@ -114,6 +114,7 @@ var getScriptPromisify = (src) => {
             })
 
             const data = {
+                accounts,
                 products,
                 series,
                 dates
@@ -295,6 +296,8 @@ var getScriptPromisify = (src) => {
                 },
                 options: []
             }
+
+            console.log(data);
 
             for (var n = 0; n < data.dates.length; n++) {
                 option.baseOption.dates.data.push(data.dates[n])
