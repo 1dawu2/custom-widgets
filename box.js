@@ -75,23 +75,19 @@ var getScriptPromisify = (src) => {
 
 
             const MEASURE_DIMENSION = '@MeasureDimension'
-            const accounts = []
             const dates = []
             const products = []
             const series = []
             console.log(resultSet);
             resultSet.forEach(dp => {
                 const { rawValue, description } = dp[MEASURE_DIMENSION]
-                const account = dp.Account.description
                 const date = Number(dp.Date.description)
                 const product = dp.Product.description
 
-                if (accounts.indexOf(account) === -1) {
-                    accounts.push(account);
-                }
                 if (dates.indexOf(date) === -1) {
                     dates.push(date);
                 }
+
                 if (products.indexOf(product) === -1) {
                     products.push(product);
                 }
@@ -109,12 +105,11 @@ var getScriptPromisify = (src) => {
                 series[iT][iP][1] = product
                 series[iT][iP][2] = date
 
-                console.log(series);
+                //console.log(series);
 
             })
 
             const data = {
-                accounts,
                 products,
                 series,
                 dates
@@ -136,7 +131,7 @@ var getScriptPromisify = (src) => {
             var schema = [
                 { name: 'Volume', index: 0, text: 'Volume', unit: 'PCS' },
                 { name: 'Product', index: 1, text: 'Product', unit: '' },
-                { name: 'Date', index: 3, text: 'Date', unit: 'Year' }
+                { name: 'Date', index: 2, text: 'Date', unit: 'Year' }
             ]
 
             const option = {
