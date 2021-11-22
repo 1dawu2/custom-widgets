@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
                 series[iT][iP] = series[iT][iP] || []
 
                 let iV
-                if (description === 'Volume') {
+                if (description === 'Value') {
                     iV = 0
                 }
                 series[iT][iP][iV] = rawValue
