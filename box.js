@@ -181,7 +181,7 @@ var getScriptPromisify = (src) => {
                     */
                     backgroundColor: '#100c2a',
                     title: [{
-                        text: data.dates[0],
+                        //text: data.dates[0],
                         textAlign: 'center',
                         left: '63%',
                         top: '55%',
@@ -199,6 +199,7 @@ var getScriptPromisify = (src) => {
                             fontSize: 20
                         }
                     }],
+                    /*
                     tooltip: {
                         padding: 5,
                         backgroundColor: '#222',
@@ -217,6 +218,7 @@ var getScriptPromisify = (src) => {
                         left: 30,
                         right: '110'
                     },
+                    */
                     xAxis: {
                         type: 'value',
                         name: 'Volume',
@@ -294,9 +296,11 @@ var getScriptPromisify = (src) => {
                         type: 'bar',
                         itemStyle: itemStyle,
                         data: data.series[n],
+                        /*
                         symbolSize: function (val) {
                             return sizeFunction(val[2])
                         }
+                        */
                     }
                 })
             }
