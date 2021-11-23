@@ -86,10 +86,6 @@ var getScriptPromisify = (src) => {
                     dates.push(date);
                 }
 
-                if (products.indexOf(product) === -1) {
-                    products.push(product);
-                }
-
                 if (description === 'Volume') {
                     values.push(rawValue);
                 }
@@ -101,7 +97,7 @@ var getScriptPromisify = (src) => {
                 values
                 
             }
-            
+
             console.log(data);
 
             myChart.setOption({
