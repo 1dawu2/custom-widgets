@@ -220,10 +220,11 @@ var getScriptPromisify = (src) => {
                     xAxis: {
                         type: 'value',
                         name: 'Volume',
-                        //max: 100000,
-                        //min: 300,
-                        //nameGap: 25,
-                        //nameLocation: 'middle',
+                        /*
+                        max: 100000,
+                        min: 300,
+                        nameGap: 25,
+                        nameLocation: 'middle',
                         nameTextStyle: {
                             fontSize: 18
                         },
@@ -235,13 +236,15 @@ var getScriptPromisify = (src) => {
                                 color: '#ccc'
                             }
                         },
+                        */
                         axisLabel: {
                             formatter: '{value}'
                         }
                     },
                     yAxis: {
                         type: 'category',
-                        name: 'Dates',
+                        name: 'Date',
+                        /*
                         max: 100,
                         nameTextStyle: {
                             color: '#ccc',
@@ -255,6 +258,7 @@ var getScriptPromisify = (src) => {
                         splitLine: {
                             show: false
                         },
+                        */
                         axisLabel: {
                             formatter: '{value}'
                         }
