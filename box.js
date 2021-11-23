@@ -71,13 +71,14 @@ var getScriptPromisify = (src) => {
             if (this._myChart) {
                 echarts.dispose(this._myChart)
             }
-            var myChart = this._myChart = echarts.init(this._root, 'dark')
+            var myChart = this._myChart = echarts.init(this._root, 'shine')
 
 
             const MEASURE_DIMENSION = 'Account'
             const dates = []
             const products = []
             const series = []
+            const values = []
             console.log(resultSet);
             resultSet.forEach(dp => {
                 const { rawValue, description } = dp[MEASURE_DIMENSION]
@@ -100,6 +101,7 @@ var getScriptPromisify = (src) => {
                 let iV
                 if (description === 'Volume') {
                     iV = 0
+                    values = rawValue
                 }
                 series[iT][iP][iV] = rawValue
                 series[iT][iP][1] = product
@@ -111,74 +113,27 @@ var getScriptPromisify = (src) => {
 
             const data = {
                 products,
-                series,
+                values,
                 dates
             }
 
-            var itemStyle = {
-                opacity: 0.8,
-                shadowBlur: 10,
-                shadowOffsetX: 0,
-                shadowOffsetY: 0,
-                shadowColor: 'rgba(0, 0, 0, 0.5)'
-            }
-
-            var sizeFunction = function (x) {
-                var y = Math.sqrt(x / 5e8) + 0.1
-                return y * 80
-            }
-
-            var schema = [
-                { name: 'Volume', index: 0, text: 'Volume', unit: 'PCS' },
-                { name: 'Product', index: 1, text: 'Product', unit: '' },
-                { name: 'Date', index: 2, text: 'Date', unit: 'Year' }
-            ]
-
-            const option = {
-                baseOption: {
-                    xAxis: {
-                        type: 'category',
-                        axisLabel: {
-                            formatter: '{value}'
-                        }
-
-                    },
-                    yAxis: {
-                        type: 'value'
-                    },
-                    series: {
-                        type: 'line',
-                        data: data.series[0]
-                    }
+            myChart.setOption({
+                title: {
+                    text: 'My first eChart'
                 },
-                options: []
-            }
-
-            for (var n = 0; n < data.dates.length; n++) {
-                //option.baseOption.timeline.data.push(data.dates[n])
-                option.options.push({
-                    /*
-                    title: {
-                        show: true,
-                        text: data.dates[n] + ''
-                    },
-                    */
-                    series: {
-                        //name: data.dates[n],
-                        type: 'line',
-                        //itemStyle: itemStyle,
-                        data: data.series[n],
-                        /*
-                        symbolSize: function (val) {
-                            return sizeFunction(val[2])
-                        }
-                        */
-                    }
-                })
-            }
-
-            myChart.setOption(option)
-
+                tooltip: {},
+                xAxis: {
+                    data: data.dates
+                },
+                yAxis: {
+                    data: data.products
+                },
+                series: [{
+                    name: 'Time',
+                    type: 'bar',
+                    data: data.values
+                }]
+            });
         }
 
         onCustomWidgetResize(width, height) {
