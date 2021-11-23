@@ -76,14 +76,11 @@ var getScriptPromisify = (src) => {
 
             const MEASURE_DIMENSION = 'Account'
             const dates = []
-            const products = []
-            const series = []
             const values = []
             console.log(resultSet);
             resultSet.forEach(dp => {
                 const { rawValue, description } = dp[MEASURE_DIMENSION]
                 const date = Number(dp.Date.description)
-                const product = dp.Product.description
 
                 if (dates.indexOf(date) === -1) {
                     dates.push(date);
@@ -93,29 +90,18 @@ var getScriptPromisify = (src) => {
                     products.push(product);
                 }
 
-                const iT = dates.indexOf(date)
-                series[iT] = series[iT] || []
-                const iP = products.indexOf(product)
-                series[iT][iP] = series[iT][iP] || []
-
-                let iV
                 if (description === 'Volume') {
-                    iV = 0
                     values.push(rawValue);
                 }
-                series[iT][iP][iV] = rawValue
-                series[iT][iP][1] = product
-                series[iT][iP][2] = date
-
-                //console.log(series);
 
             })
 
             const data = {
-                products,
-                values,
-                dates
+                dates,
+                values
+                
             }
+            
             console.log(data);
 
             myChart.setOption({
@@ -127,10 +113,10 @@ var getScriptPromisify = (src) => {
                     data: data.dates
                 },
                 yAxis: {
-                    data: data.products
+                    //data: data.products
                 },
                 series: [{
-                    name: 'Time',
+                    name: 'Volume',
                     type: 'bar',
                     data: data.values
                 }]
