@@ -216,12 +216,12 @@ var getScriptPromisify = (src) => {
                         right: '110'
                     },
                     xAxis: {
-                        type: 'log',
+                        type: 'value',
                         name: 'Volume',
-                        max: 100000,
-                        min: 300,
-                        nameGap: 25,
-                        nameLocation: 'middle',
+                        //max: 100000,
+                        //min: 300,
+                        //nameGap: 25,
+                        //nameLocation: 'middle',
                         nameTextStyle: {
                             fontSize: 18
                         },
@@ -238,8 +238,8 @@ var getScriptPromisify = (src) => {
                         }
                     },
                     yAxis: {
-                        type: 'value',
-                        name: 'Time',
+                        type: 'category',
+                        name: 'Product',
                         max: 100,
                         nameTextStyle: {
                             color: '#ccc',
@@ -254,10 +254,10 @@ var getScriptPromisify = (src) => {
                             show: false
                         },
                         axisLabel: {
-                            formatter: '{value} Years'
+                            formatter: '{value}'
                         }
                     },
-                    visualMap: [
+                    /*visualMap: [
                         {
                             show: false,
                             dimension: 3,
@@ -275,10 +275,10 @@ var getScriptPromisify = (src) => {
                                 })()
                             }
                         }
-                    ],
+                    ],*/
                     series: [
                         {
-                            type: 'scatter',
+                            type: 'bar',
                             itemStyle: itemStyle,
                             data: data.series[0],
                             symbolSize: function (val) {
@@ -303,7 +303,7 @@ var getScriptPromisify = (src) => {
                     },
                     series: {
                         name: data.dates[n],
-                        type: 'scatter',
+                        type: 'bar',
                         itemStyle: itemStyle,
                         data: data.series[n],
                         symbolSize: function (val) {
