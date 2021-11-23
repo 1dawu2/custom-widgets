@@ -10,10 +10,20 @@
     <td><input id="builder_opacity" type="text" size="5"
    maxlength="5"></td>
     </tr>
-    </table>
+    <tr>
+    <td>Chart Type</td>
+    <td>
+        <select id="builder_chartType">
+            <option>bar</option>
+            <option>line</option>
+        </select>
+   </td>
+    </tr>    
+    </table>    
     <input type="submit" style="display:none;">
     </fieldset>
     </form>
+    <span class="sapMBtnContent" id="__button1005-content"><bdi id="__button1005-BDI-content">Add x-Axis/Dimensions</bdi></span>
     <style>
     :host {
     display: block;
@@ -36,10 +46,20 @@
                 detail: {
                     properties: {
                         opacity: this.opacity
+                        chartType: this.chartType
                     }
                 }
             }));
         }
+        set chartType(chartTypeNew) {
+            this._shadowRoot.getElementById("builder_chartType").value =
+            chartTypeNew;
+        }
+
+        get chartType() {
+            return this._shadowRoot.getElementById("builder_chartType").value;
+        }
+
         set opacity(newOpacity) {
             this._shadowRoot.getElementById("builder_opacity").value =
                 newOpacity;

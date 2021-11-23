@@ -37,6 +37,11 @@
             "description": "Tablename",
             "default": "Table_1"
         },
+        "chartType": {
+            "type": "string",
+            "description": "Chart Type",
+            "default": "bar"
+        },
         "color": {
             "type": "string",
             "description": "Background color",
@@ -57,6 +62,20 @@
         }
     },
     "methods": {
+        "setChartType": {
+            "parameters": [
+                {
+                    "name": "chartTypeNew",
+                    "type": "string"
+                }
+            ],
+            "body": "this.chartType = chartTypeNew"
+        },
+        "getChartType": {
+            "returnType": "string",
+            "description": "Returns the Chart Type.",
+            "body": "return this.chartType;"
+        },
         "setButtonText1": {
             "parameters": [
                 {
