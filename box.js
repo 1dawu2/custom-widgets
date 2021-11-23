@@ -279,7 +279,7 @@ var getScriptPromisify = (src) => {
             console.log(data);
 
             for (var n = 0; n < data.dates.length; n++) {
-                option.baseOption.timeline.data.push(data.dates[n])
+                //option.baseOption.timeline.data.push(data.dates[n])
                 option.options.push({
                     title: {
                         show: true,
