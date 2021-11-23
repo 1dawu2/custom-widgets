@@ -30,9 +30,9 @@ var getScriptPromisify = (src) => {
 
             this._shadowRoot = this.attachShadow({ mode: 'open' })
             this._shadowRoot.appendChild(template.content.cloneNode(true))
-      
+
             this._root = this._shadowRoot.getElementById('root')
-      
+
             this._props = {}
         }
 
@@ -136,165 +136,37 @@ var getScriptPromisify = (src) => {
 
             const option = {
                 baseOption: {
-                    /*
-                    timeline: {
-                        axisType: 'category',
-                        orient: 'vertical',
-                        autoPlay: true,
-                        inverse: true,
-                        playInterval: 1000,
-                        left: null,
-                        right: 0,
-                        top: 20,
-                        bottom: 20,
-                        width: 55,
-                        height: null,
-                        label: {
-                            color: '#999'
-                        },
-                        symbol: 'none',
-                        lineStyle: {
-                            color: '#555'
-                        },
-                        checkpointStyle: {
-                            color: '#bbb',
-                            borderColor: '#777',
-                            borderWidth: 2
-                        },
-                        controlStyle: {
-                            showNextBtn: false,
-                            showPrevBtn: false,
-                            color: '#666',
-                            borderColor: '#666'
-                        },
-                        emphasis: {
-                            label: {
-                                color: '#fff'
-                            },
-                            controlStyle: {
-                                color: '#aaa',
-                                borderColor: '#aaa'
-                            }
-                        },
-                        data: []
-                    },
-                    */
-                    backgroundColor: '#100c2a',
-                    title: [{
-                        //text: data.dates[0],
-                        textAlign: 'center',
-                        left: '63%',
-                        top: '55%',
-                        textStyle: {
-                            fontSize: 100,
-                            color: 'rgba(255, 255, 255, 0.7)'
-                        }
-                    }, {
-                        text: 'Volume by products and time',
-                        left: 'center',
-                        top: 10,
-                        textStyle: {
-                            color: '#aaa',
-                            fontWeight: 'normal',
-                            fontSize: 20
-                        }
-                    }],
-                    /*
-                    tooltip: {
-                        padding: 5,
-                        backgroundColor: '#222',
-                        borderColor: '#777',
-                        borderWidth: 1,
-                        formatter: function (obj) {
-                            var value = obj.value
-                            return schema[2].text + '：' + value[2] + '<br>' +
-                                schema[1].text + '：' + value[1] + schema[1].unit + '<br>' +
-                                schema[0].text + '：' + value[0] + schema[0].unit + '<br>'
-                        }
-                    },
-                    grid: {
-                        top: 100,
-                        containLabel: true,
-                        left: 30,
-                        right: '110'
-                    },
-                    */
                     xAxis: {
-                        type: 'value',
-                        name: 'Volume',
-                        /*
-                        max: 100000,
-                        min: 300,
-                        nameGap: 25,
-                        nameLocation: 'middle',
-                        nameTextStyle: {
-                            fontSize: 18
-                        },
-                        splitLine: {
-                            show: false
-                        },
-                        axisLine: {
-                            lineStyle: {
-                                color: '#ccc'
-                            }
-                        },
-                        */
+                        type: 'category',
                         axisLabel: {
                             formatter: '{value}'
                         }
+
                     },
                     yAxis: {
-                        type: 'category',
-                        name: 'Date',
-                        /*
-                        max: 100,
-                        nameTextStyle: {
-                            color: '#ccc',
-                            fontSize: 18
-                        },
-                        axisLine: {
-                            lineStyle: {
-                                color: '#ccc'
-                            }
-                        },
-                        splitLine: {
-                            show: false
-                        },
-                        */
-                        axisLabel: {
-                            formatter: '{value}'
-                        }
+                        type: 'value'
                     },
-                    series: [
-                        {
-                            type: 'bar',
-                            itemStyle: itemStyle,
-                            data: data.series[0],
-                            symbolSize: function (val) {
-                                return sizeFunction(val[2])
-                            }
-                        }
-                    ]/*,
-                    animationDurationUpdate: 1000,
-                    animationEasingUpdate: 'quinticInOut'
-                    */
+                    series: {
+                        type: 'line',
+                        data: data.series[0]
+                    }
                 },
                 options: []
             }
 
-            console.log(data);
-
             for (var n = 0; n < data.dates.length; n++) {
                 //option.baseOption.timeline.data.push(data.dates[n])
                 option.options.push({
+                    /*
                     title: {
                         show: true,
                         text: data.dates[n] + ''
                     },
+                    */
                     series: {
-                        name: data.dates[n],
-                        type: 'bar',
-                        itemStyle: itemStyle,
+                        //name: data.dates[n],
+                        type: 'line',
+                        //itemStyle: itemStyle,
                         data: data.series[n],
                         /*
                         symbolSize: function (val) {
