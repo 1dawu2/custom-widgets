@@ -136,6 +136,7 @@ var getScriptPromisify = (src) => {
 
             const option = {
                 baseOption: {
+                    /*
                     timeline: {
                         axisType: 'category',
                         orient: 'vertical',
@@ -177,6 +178,7 @@ var getScriptPromisify = (src) => {
                         },
                         data: []
                     },
+                    */
                     backgroundColor: '#100c2a',
                     title: [{
                         text: data.dates[0],
@@ -234,12 +236,12 @@ var getScriptPromisify = (src) => {
                             }
                         },
                         axisLabel: {
-                            formatter: '{value} $'
+                            formatter: '{value}'
                         }
                     },
                     yAxis: {
                         type: 'category',
-                        name: 'Product',
+                        name: 'Dates',
                         max: 100,
                         nameTextStyle: {
                             color: '#ccc',
@@ -257,25 +259,6 @@ var getScriptPromisify = (src) => {
                             formatter: '{value}'
                         }
                     },
-                    /*visualMap: [
-                        {
-                            show: false,
-                            dimension: 3,
-                            categories: data.products,
-                            calculable: true,
-                            precision: 0.1,
-                            textGap: 30,
-                            textStyle: {
-                                color: '#ccc'
-                            },
-                            inRange: {
-                                color: (function () {
-                                    var colors = ['#bcd3bb', '#e88f70', '#edc1a5', '#9dc5c8', '#e1e8c8', '#7b7c68', '#e5b5b5', '#f0b489', '#928ea8', '#bda29a']
-                                    return colors.concat(colors)
-                                })()
-                            }
-                        }
-                    ],*/
                     series: [
                         {
                             type: 'bar',
@@ -285,9 +268,10 @@ var getScriptPromisify = (src) => {
                                 return sizeFunction(val[2])
                             }
                         }
-                    ],
+                    ]/*,
                     animationDurationUpdate: 1000,
                     animationEasingUpdate: 'quinticInOut'
+                    */
                 },
                 options: []
             }
