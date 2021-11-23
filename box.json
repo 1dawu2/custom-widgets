@@ -62,20 +62,6 @@
         }
     },
     "methods": {
-        "setChartType": {
-            "parameters": [
-                {
-                    "name": "chartTypeNew",
-                    "type": "string"
-                }
-            ],
-            "body": "this.chartType = chartTypeNew"
-        },
-        "getChartType": {
-            "returnType": "string",
-            "description": "Returns the Chart Type.",
-            "body": "return this.chartType;"
-        },
         "setButtonText1": {
             "parameters": [
                 {
