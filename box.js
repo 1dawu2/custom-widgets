@@ -101,7 +101,7 @@ var getScriptPromisify = (src) => {
                 let iV
                 if (description === 'Volume') {
                     iV = 0
-                    values = rawValue
+                    values.push(rawValue);
                 }
                 series[iT][iP][iV] = rawValue
                 series[iT][iP][1] = product
@@ -116,6 +116,7 @@ var getScriptPromisify = (src) => {
                 values,
                 dates
             }
+            console.log(data);
 
             myChart.setOption({
                 title: {
