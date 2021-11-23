@@ -80,7 +80,7 @@ var getScriptPromisify = (src) => {
             console.log(resultSet);
             resultSet.forEach(dp => {
                 const { rawValue, description } = dp[MEASURE_DIMENSION]
-                const date = Number(dp.Date.description)
+                const date = dp.Date.description
 
                 if (dates.indexOf(date) === -1) {
                     dates.push(date);
