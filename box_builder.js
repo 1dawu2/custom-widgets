@@ -23,7 +23,6 @@
     <input type="submit" style="display:none;">
     </fieldset>
     </form>
-    <span class="sapMBtnContent" id="__button1005-content"><bdi id="__button1005-BDI-content">Add x-Axis/Dimensions</bdi></span>
     <style>
     :host {
     display: block;

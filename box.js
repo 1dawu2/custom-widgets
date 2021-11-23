@@ -95,7 +95,6 @@ var getScriptPromisify = (src) => {
             const data = {
                 dates,
                 values
-                
             }
 
             console.log(data);
@@ -113,7 +112,7 @@ var getScriptPromisify = (src) => {
                 },
                 series: [{
                     name: 'Volume',
-                    type: 'bar',
+                    type: this._chartType,
                     data: data.values
                 }]
             });
@@ -132,6 +131,10 @@ var getScriptPromisify = (src) => {
             }
             if ("opacity" in changedProperties) {
                 this.style["opacity"] = changedProperties["opacity"];
+            }
+            if ("chartType" in changedProperties) {
+                this.chartType = changedProperties["chartType"];
+                console.log(changedProperties["chartType"]);
             }
         }
     }
