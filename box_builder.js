@@ -12,12 +12,7 @@
     </tr>
     <tr>
     <td>Chart Type</td>
-    <td>
-        <select id="builder_chartType">
-            <option>bar</option>
-            <option>line</option>
-        </select>
-   </td>
+    <td><input id="builder_chartType" type="text" size="5" maxlength="5"></td>
     </tr>    
     </table>    
     <input type="submit" style="display:none;">
