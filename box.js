@@ -112,7 +112,7 @@ var getScriptPromisify = (src) => {
                 },
                 series: [{
                     name: 'Volume',
-                    type: this._chartType,
+                    type: this.chartType,
                     data: data.values
                 }]
             });
